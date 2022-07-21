@@ -28,3 +28,12 @@
 6. детальная альбома. Все фото альбома с описанием и слайдером
    Все полученные данные необходимо кэшировать используя пакет SharedPreferences, и не должны повторно запрашиваться если уже получены.
    Требования к внешнему виду: понятный интерфейс на Ваш вкус.
+![Screenshot_20220722_021954](https://user-images.githubusercontent.com/38154419/180331553-76336e51-b3c8-4558-81ae-9a511c6b8f21.png)
+![Screenshot_20220722_022037](https://user-images.githubusercontent.com/38154419/180331557-240e1967-7db3-4590-b968-04f8a669fd08.png)
+![Screenshot_20220722_022115](https://user-images.githubusercontent.com/38154419/180331559-5744b04d-667a-45d3-848a-7849adaa6be6.png)
+![Screenshot_20220722_022142](https://user-images.githubusercontent.com/38154419/180331561-1db9c42e-01c6-4920-942b-fe5ad5d38615.png)
+![Screenshot_20220722_022217](https://user-images.githubusercontent.com/38154419/180331562-b0488fc6-0de4-4775-a749-ad9897b63a77.png)
+![Screenshot_20220722_022400](https://user-images.githubusercontent.com/38154419/180331564-7c01f806-73ef-4dd5-bf4f-ed5c21654ebe.png)
+![Screenshot_20220722_022555](https://user-images.githubusercontent.com/38154419/180331567-7759a907-d353-413d-b27e-af6f4b3f9dd3.png)
+![Screenshot_20220722_022614](https://user-images.githubusercontent.com/38154419/180331568-edbf08d1-4a34-4216-89cf-8ba729ab2571.png)
+![Screenshot_20220722_022819](https://user-images.githubusercontent.com/38154419/180331569-6f12dc13-8064-462d-a887-d97d464f24a5.png)
