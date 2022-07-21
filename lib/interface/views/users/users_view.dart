@@ -12,8 +12,10 @@ class UsersView extends StatelessWidget {
     return ViewModelBuilder<UsersViewModel>.reactive(
       viewModelBuilder: () => UsersViewModel(),
       builder: (context, viewModel, child) => Scaffold(
+        extendBodyBehindAppBar: true,
         appBar: AppBar(
-          title: const TextWiget.headline2('Пользователи'),
+          backgroundColor: Colors.transparent,
+          elevation: 0.0,
           centerTitle: true,
         ),
         body: viewModel.isBusy
@@ -23,6 +25,7 @@ class UsersView extends StatelessWidget {
                 itemBuilder: (context, index) => GestureDetector(
                   onTap: () => viewModel.navigateToUserView(index),
                   child: Card(
+                    color: Colors.orangeAccent,
                     margin: basePadding,
                     child: Padding(
                       padding: constPadding,

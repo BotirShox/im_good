@@ -1,10 +1,12 @@
 import 'dart:convert';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:im_good/models/album.dart';
 import 'package:im_good/models/comment.dart';
 import 'package:im_good/models/photo.dart';
 import 'package:im_good/models/post.dart';
 import 'package:im_good/models/user.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ApiService {
   static const endpoint = 'https://jsonplaceholder.typicode.com';
@@ -20,6 +22,8 @@ class ApiService {
       var u = User.fromMap(user);
       users.add(u);
     }
+    SharedPreferences prefUser = await SharedPreferences.getInstance();
+    prefUser.setString('stringUser', "$users");
     return users;
   }
 
@@ -32,6 +36,8 @@ class ApiService {
       var p = Post.fromMap(post);
       posts.add(p);
     }
+    SharedPreferences prefPost = await SharedPreferences.getInstance();
+    prefPost.setString('stringPost', "$posts");
     return posts;
   }
 
@@ -45,6 +51,8 @@ class ApiService {
       var a = Album.fromMap(album);
       albums.add(a);
     }
+    SharedPreferences prefAl = await SharedPreferences.getInstance();
+    prefAl.setBool('$albums', true);
     return albums;
   }
 
@@ -58,6 +66,8 @@ class ApiService {
       var c = Comment.fromMap(comment);
       comments.add(c);
     }
+    SharedPreferences prefCom = await SharedPreferences.getInstance();
+    prefCom.setString('stringComment', "$comments");
     return comments;
   }
 
@@ -67,10 +77,11 @@ class ApiService {
       'name': comment.name,
       'body': comment.body,
     });
-    // ignore: avoid_print
     print('Response status: ${response.statusCode}');
-    // ignore: avoid_print
+    Fluttertoast.showToast(msg: "Опубликовано: " + response.body);
     print('Response body: ${response.body}');
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('stringCom', response.body);
   }
 
   Future getAlbumPhotos(int albumId) async {
@@ -84,5 +95,10 @@ class ApiService {
       photos.add(p);
     }
     return photos;
+  }
+  getStringValuesSF() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String? stringUser = prefs.getString('stringUser');
+    return stringUser;
   }
 }

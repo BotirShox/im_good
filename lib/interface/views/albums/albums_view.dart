@@ -17,12 +17,14 @@ class AlbumsView extends StatelessWidget {
       viewModelBuilder: () => AlbumsViewModel(),
       builder: (context, viewModel, child) => Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.green,
           title: TextWiget.headline2('Альбомы  $username'),
           centerTitle: true,
         ),
         body: ListView.builder(
           itemCount: albums.length,
           itemBuilder: (context, index) => Card(
+            color: Colors.greenAccent,
             margin: basePadding,
             child: Padding(
               padding: constPadding,

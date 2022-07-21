@@ -19,6 +19,7 @@ class CommentsView extends StatelessWidget {
       onModelReady: (viewModel) => viewModel.getPostComments(post.id),
       builder: (context, viewModel, child) => Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.lightBlue,
           title: const TextWiget.headline2('Комментарии'),
           centerTitle: true,
         ),
@@ -42,6 +43,7 @@ class CommentsView extends StatelessWidget {
                     child: ListView.builder(
                       itemCount: viewModel.postComments.length,
                       itemBuilder: (context, index) => Card(
+                        color: Colors.cyanAccent,
                         margin: basePadding,
                         child: Padding(
                           padding: constPadding,

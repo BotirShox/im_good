@@ -25,6 +25,7 @@ class CreateCommentView extends StatelessWidget {
       builder: (context, viewModel, child) => Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
+          backgroundColor: Colors.cyan,
           title: const TextWiget.headline2('Создать комментарий'),
           centerTitle: true,
         ),
@@ -63,8 +64,8 @@ class CreateCommentView extends StatelessWidget {
                               _emailController.text.isNotEmpty &&
                               _commentController.text.isNotEmpty) {
                             var tempComment = Comment(
-                              id: 0,
-                              postId: 0,
+                              id: 1,
+                              postId: 1,
                               name: _nameController.text,
                               email: _emailController.text,
                               body: _commentController.text,

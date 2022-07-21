@@ -18,6 +18,7 @@ class PostsView extends StatelessWidget {
       viewModelBuilder: () => PostsViewModel(),
       builder: (context, viewModel, child) => Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.blue,
           title: TextWiget.headline2('Посты  $username'),
           centerTitle: true,
         ),
@@ -26,6 +27,7 @@ class PostsView extends StatelessWidget {
           itemBuilder: (context, index) => GestureDetector(
             onTap: () => viewModel.navigateToCommentsView(posts[index]),
             child: Card(
+              color: Colors.tealAccent,
               margin: basePadding,
               child: Padding(
                 padding: constPadding,

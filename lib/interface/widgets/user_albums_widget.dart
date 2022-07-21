@@ -13,6 +13,7 @@ class UserAlbumsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Colors.greenAccent,
       margin: basePadding,
       child: Container(
         padding: constPadding,

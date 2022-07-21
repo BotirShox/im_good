@@ -5,14 +5,12 @@ import 'package:flutter/material.dart';
 
 class UserPostsWidget extends StatelessWidget {
   final List<Post> posts;
-  const UserPostsWidget({
-    Key? key,
-    required this.posts,
-  }) : super(key: key);
+  const UserPostsWidget({Key? key, required this.posts}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Colors.cyanAccent,
       margin: basePadding,
       child: Container(
         padding: constPadding,
@@ -28,10 +26,8 @@ class UserPostsWidget extends StatelessWidget {
                     (p) => Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        TextWiget.body(p.title),
+                        TextWiget.body("- " + p.title),
                         verticalSpaceTiny,
-                        TextWiget.oneline(p.body),
-                        verticalSpaceSmall
                       ],
                     ),
                   )

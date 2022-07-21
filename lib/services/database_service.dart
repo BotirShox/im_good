@@ -4,9 +4,6 @@ import 'package:im_good/models/comment.dart';
 import 'package:im_good/models/photo.dart';
 import 'package:im_good/models/post.dart';
 import 'package:im_good/models/user.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite/sqflite.dart';
 
 const String dbName = 'eds.db';
@@ -226,38 +223,4 @@ class DatabaseService {
       ..sort();
     return tableNames;
   }
-}
-
-class SharedPreferencesDemo extends StatefulWidget {
-  const SharedPreferencesDemo({Key? key}) : super(key: key);
-
-  @override
-  SharedPreferencesDemoState createState() => SharedPreferencesDemoState();
-}
-
-class SharedPreferencesDemoState extends State<SharedPreferencesDemo> {
-  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
-  late Future<int> _counter;
-
-  Future<void> _incrementCounter() async {
-    final SharedPreferences prefs = await _prefs;
-    final int counter = (prefs.getInt('counter') ?? 0) + 1;
-
-    setState(() {
-      _counter = prefs.setInt('counter', counter).then((bool success) {
-        return counter;
-      });
-    });
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    _counter = _prefs.then((SharedPreferences prefs) {
-      return prefs.getInt('counter') ?? 0;
-    });
-  }
-
-  @override
-  dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
 }

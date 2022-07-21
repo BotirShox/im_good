@@ -9,5 +9,4 @@ Future<void> setupLocator() async {
   locator.registerLazySingleton(() => NavigationService());
   locator.registerLazySingleton(() => ApiService());
   locator.registerLazySingleton(() => DatabaseService());
-
 }

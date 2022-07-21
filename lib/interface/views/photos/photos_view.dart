@@ -27,7 +27,8 @@ class PhotosView extends StatelessWidget {
       },
       builder: (context, viewModel, child) => Scaffold(
         appBar: AppBar(
-          title: const TextWiget.headline2('Все фото'),
+          backgroundColor: Colors.green,
+          title: const TextWiget.headline2('Все фото альбома'),
           centerTitle: true,
         ),
         body: viewModel.showSlideShow! && viewModel.albumPhotos.isNotEmpty

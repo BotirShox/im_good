@@ -6,7 +6,6 @@ import 'services/navigation_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   await setupLocator();
   runApp(const ImGood());
 }
@@ -19,7 +18,7 @@ class ImGood extends StatelessWidget {
     return MaterialApp(
       title: "I'm Good",
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.yellow,
       ),
       debugShowCheckedModeBanner: false,
       home: const StartupView(),

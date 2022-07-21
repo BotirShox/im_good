@@ -13,6 +13,7 @@ class UserInfoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Colors.yellowAccent,
       margin: basePadding,
       child: Container(
         padding: constPadding,
