@@ -1,11 +1,10 @@
 import 'package:im_good/interface/shared/ui_helpers.dart';
+import 'package:im_good/interface/views/photos/photo_large.dart';
 import 'package:im_good/interface/widgets/carousel_images_widget.dart';
 import 'package:im_good/interface/widgets/image_widget.dart';
 import 'package:im_good/interface/widgets/text_widget.dart';
-
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-
 import 'photos_view_model.dart';
 
 class PhotosView extends StatelessWidget {
@@ -38,25 +37,30 @@ class PhotosView extends StatelessWidget {
                   photos: viewModel.albumPhotos,
                 ),
               )
-            : GridView.builder(
-                padding: const EdgeInsets.all(10.0),
-                itemCount: viewModel.albumPhotos.length,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
-                  childAspectRatio: 3 / 2,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
-                ),
-                itemBuilder: (context, index) => GridTile(
-                  child: ImageWidget(
-                    imageUrl: viewModel.albumPhotos[index].thumbnailUrl,
-                  ),
-                  footer: GridTileBar(
-                    subtitle:
-                        TextWiget.body(viewModel.albumPhotos[index].title),
-                  ),
-                ),
+            : GestureDetector(
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => PhotoLarge(albumId: albumId, slideshow: slideshow,)));
+          },
+          child: GridView.builder(
+            padding: const EdgeInsets.all(10.0),
+            itemCount: viewModel.albumPhotos.length,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+              childAspectRatio: 3 / 2,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+            ),
+            itemBuilder: (context, index) => GridTile(
+              child: ImageWidget(
+                imageUrl: viewModel.albumPhotos[index].thumbnailUrl,
               ),
+              footer: GridTileBar(
+                subtitle:
+                TextWiget.body(viewModel.albumPhotos[index].title),
+              ),
+            ),
+          ),
+        )
       ),
     );
   }

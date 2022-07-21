@@ -26,7 +26,12 @@ class UserAlbumsWidget extends StatelessWidget {
             verticalSpaceSmall,
             ...<Widget>[
               ...albums.take(3).map(
-                    (a) => TextWiget.body('- ${a.title}'),
+                    (a) => Column(
+                      children: [
+                        TextWiget.body('- ${a.title}'),
+                        verticalSpaceTiny,
+                      ],
+                    )
                   ),
             ],
           ],

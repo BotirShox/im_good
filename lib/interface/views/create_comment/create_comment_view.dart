@@ -3,10 +3,8 @@ import 'package:im_good/interface/widgets/button_widget.dart';
 import 'package:im_good/interface/widgets/text_input_field_widget.dart';
 import 'package:im_good/interface/widgets/text_widget.dart';
 import 'package:im_good/models/comment.dart';
-
 import 'package:stacked/stacked.dart';
 import 'package:flutter/material.dart';
-
 import 'create_comment_view_model.dart';
 
 class CreateCommentView extends StatelessWidget {

@@ -29,7 +29,7 @@ class UserInfoWidget extends StatelessWidget {
             TextWiget.body('phone:     ${user.phone}'),
             verticalSpaceTiny,
             TextWiget.body('website:  ${user.website}'),
-            verticalSpaceTiny,
+            verticalSpaceSmall,
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -41,15 +41,17 @@ class UserInfoWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      verticalSpaceTiny,
                       TextWiget.body("\nname:  " + user.company.name),
                       TextWiget.body("bs:        " + user.company.bs),
+                      verticalSpaceTiny,
                       TextWiget.caption('catchPhrase:  "${user.company.catchPhrase}"'),
                     ],
                   ),
                 ),
               ],
             ),
-            verticalSpaceTiny,
+            verticalSpaceSmall,
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -61,8 +63,10 @@ class UserInfoWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      verticalSpaceTiny,
                       TextWiget.body(
                           '\nstreet:  ${user.address.street},\nsuite:    ${user.address.suite},\ncity:      ${user.address.city}'),
+                      verticalSpaceTiny,
                       TextWiget.caption('zipcode:  ${user.address.zipcode}'),
                       TextWiget.caption(
                         'Longitude: ${user.address.geo['lng']}, & Latitude: ${user.address.geo['lat']}',

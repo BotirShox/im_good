@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:im_good/models/album.dart';
 import 'package:im_good/models/comment.dart';
 import 'package:im_good/models/photo.dart';
@@ -78,7 +77,6 @@ class ApiService {
       'body': comment.body,
     });
     print('Response status: ${response.statusCode}');
-    Fluttertoast.showToast(msg: "Опубликовано: " + response.body);
     print('Response body: ${response.body}');
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString('stringCom', response.body);
